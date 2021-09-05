@@ -448,10 +448,6 @@ body > .navbar-collapse a {
   height: auto;
 }
 
-.avatar-danger {
-  border-color: #ffffff;
-}
-
 *::selection {
   background: #000000;
   color: #FFFFFF;
