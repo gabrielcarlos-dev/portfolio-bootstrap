@@ -437,7 +437,6 @@ body > .navbar-collapse a {
 }
 
 .avatar {
-  border: 3px solid #c5a47e;
   border-radius: 50%;
   overflow: hidden;
   max-width: 110px;
