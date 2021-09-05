@@ -13,12 +13,13 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. */
 
 /*minhas modificações*/
-@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
+*{
+  font-family: 'Roboto', sans-serif;
+}
 
 .social-icons a{
-  font-size: 32px;
   margin-left: 5px;
   color: white;
 
@@ -30,20 +31,85 @@
   transition: all .3s;
 }
 
-}
-
-
-
 social-icons a{
   margin-left: 35%;
   font-size: 100%;
 }
 
+.cabecalho-inicio{
+  max-width: 60%;
+  margin-left: 5%;
+  font-size: 1rem;
+}
+.cabecalho-inicio h1{
+  color: var(--cor-secundaria2);
+  margin-top: -20px;
+    'Comfortaa', cursive;
+  font-weight: 600;
+  font-size: 5rem;
+  text-shadow: none;
+}
+
+.cabecalho-inicio p{
+  font-size: calc(3.26rem + (5.6 - 2.26) * ((10vw - 20rem)/(48 - 20)));
+  margin: 0;
+}
+
+.cabecalho-inicio h3{
+  font-size: calc(3.26rem + (4.6 - 2.26) * ((10vw - 20rem)/(48 - 20)));
+  margin: 0;
+}
+
+.social-icons a{
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+.social-icons a:hover{
+  margin-right: 30px;
+  color: var(--cor-secundaria2);
+}
+
+.cabecalho-inicio span{
+
+}
+
+.typing{
+  color: var(--cor-secundaria);
+  font-weight: 500;
+}
+
+.card:hover{
+  background-color: var(--cor-secundaria2);
+}
+
+.card:hover .small-text{
+  color: var(--cor-light);
+}
+
+.card:hover p{
+  color: var(--cor-light);
+}
+
+.card:hover h3{
+  color: var(--cor-light);
+}
+
+.card:hover button{
+  background-color: #000000;
+  color: #fff;
+  font-weight: 600;
+}
+
+.navbar-tittle-text{
+  color: var(--cor-secundaria);
+}
 /*      light colors         */
-
 :root{
-     --cor-secundaria: rgb(2, 19, 94);
-
+     --cor-secundaria: #3066fc;
+     --cor-secundaria2: #ff3300;
+     --cor-dark: #111;
+     --cor-light: #fff;
 }
 html {
   font-size: 14px;
@@ -98,7 +164,7 @@ h6,
 .content-blog p {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Klee One', cursive;
+    'Klee One', cursive;
 }
 h1 a,
 .h1 a,
@@ -114,7 +180,7 @@ h6 a,
 .h6 a,
 .content-blog p a {
   font-size: inherit;
-  font-family: "Cambo", "Times New Roman", serif;
+    "Cambo", "Times New Roman", serif;
 }
 
 .content-blog {
@@ -175,7 +241,6 @@ td,
 small,
 .media h5,
 .subtitle {
-  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -197,7 +262,6 @@ a:hover {
 }
 
 .title-modern {
-  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
 
@@ -237,7 +301,6 @@ a:hover {
 .quotes:before, .quotes:after {
   position: absolute;
   font-size: 40px;
-  font-family: sans-serif;
   color: #777777;
   line-height: 0;
 }
@@ -1118,7 +1181,7 @@ a,
   z-index: 3;
   content: "";
   opacity: .7;
-  background: #333;
+  background: rgb(0, 0, 0);
 }
 .filter .title-area .description {
   color: #FFFFFF;
@@ -1611,7 +1674,7 @@ a,
 
 .footer-color-black,
 .footer-transparent {
-  background-color: rgba(30, 30, 30, 0.97);
+  background-color: var(--cor-dark);
   color: #DDDDDD;
 }
 .footer-color-black nav > ul a,
@@ -2057,7 +2120,6 @@ a,
 .section-header-blog p,
 .section-presentation-page p {
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   margin: 1em 0 0.5em;
 }
 .section-header p span,
@@ -2235,7 +2297,6 @@ a,
   margin-bottom: 5px;
 }
 .client-logo h3 {
-  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .section-team-1 {
@@ -2586,7 +2647,7 @@ a,
 
 .section-our-clients-freebie .nav-text,
 .section-our-clients .nav-text {
-  margin: 30px auto;
+  margin-top: -120px;
   text-align: center;
 }
 
