@@ -32,7 +32,6 @@
 }
 
 social-icons a{
-  margin-left: 35%;
   font-size: 100%;
 }
 
@@ -43,10 +42,9 @@ social-icons a{
 }
 .cabecalho-inicio h1{
   color: var(--cor-secundaria2);
-  margin-top: -20px;
-  font-weight: 600;
-  font-size: 5rem;
+  font-weight: 700;
   text-shadow: none;
+  margin-top: -20px;
 }
 
 .cabecalho-inicio p{
