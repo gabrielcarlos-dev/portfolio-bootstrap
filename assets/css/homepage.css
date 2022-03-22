@@ -1,18 +1,4 @@
-/* =========================================================
-* Gaia Bootstrap Template - v1.0.1
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/gaia-bootstrap-template
-* Licensed under MIT (https://github.com/creativetimofficial/gaia-bootstrap-template/blob/master/LICENSE.md)
-* Copyright 2019 Creative Tim (http://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. */
-
-/*minhas modificações*/
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 
 *{
@@ -36,7 +22,7 @@ social-icons a{
 }
 
 .cabecalho-inicio{
-  max-width: 60%;
+  max-width: 2w;
   margin-left: 5%;
   font-size: 1rem;
 }
@@ -162,11 +148,6 @@ h5,
 .h5,
 h6,
 .h6,
-.content-blog p {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-    'Klee One', cursive;
-}
 h1 a,
 .h1 a,
 h2 a,
@@ -179,10 +160,7 @@ h5 a,
 .h5 a,
 h6 a,
 .h6 a,
-.content-blog p a {
-  font-size: inherit;
-    "Cambo", "Times New Roman", serif;
-}
+
 
 .content-blog {
   padding: 30px 0;
@@ -227,23 +205,6 @@ p {
   font-weight: 400;
   margin: 0 0 .75em;
 }
-
-p,
-label,
-.btn,
-.form-control,
-.title h5,
-.navbar,
-.brand,
-.btn-simple,
-a,
-.td-name,
-td,
-small,
-.media h5,
-.subtitle {
-}
-
 a {
   color: #ffffff;
   opacity: .7;
