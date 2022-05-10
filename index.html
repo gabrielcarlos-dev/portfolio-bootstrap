@@ -6,23 +6,22 @@
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
     <link rel="icon" type="iconsizes=" 96x96" href="assets/img/favicon.ico">
 
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Gabriel Furlan</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <link href="assets/css/homepage.css" rel="stylesheet" />
 
-    <!--     Fontes e icones     -->
     <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="ht0tps://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
 
 <body>
 
     <nav class="navbar navbar-default navbar-transparent navbar-fixed-top" color-on-scroll="200">
-        <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
         <div class="container">
             <div class="navbar-header">
                 <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse"
@@ -34,9 +33,12 @@
                 </button>
                 <a href="#" class="navbar-brand"><span class="navbar-tittle-text">Port</span>folio</a>
             </div>
-
+            
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right navbar-uppercase">
+                    <li>
+                        <button type="button" class="btn btn-primary mb-2" onclick="AlterarAltoContraste()">Alto Contraste</button>
+                    </li>
 
                     <li>
                         <a href="#inicio">Inicio</a>
@@ -353,13 +355,39 @@
         </section>
 
         <section style="height: 500px;">
-            <div class="container" style="margin: auto; display: flex; align-items: center; justify-content: center; margin-top: 50px;">
+            <div class="container"
+                style="margin: auto; display: flex; align-items: center; justify-content: center; margin-top: 50px;">
                 <video controls style="max-width: 450px;">
                     <source src="assets/img/SORRAYA.mp4" type="video/mp4">
                     <source src="assets/img/SORRAYA.mp4" type="video/ogg">
-                  Your browser does not support the video tag.
-                  </video>
+                    Your browser does not support the video tag.
+                </video>
             </div>
+        </section>
+
+        <section class="sessao" style="align-items: center; justify-content: center; margin: auto;">
+            <Fieldset>
+                <legend>Formulario</legend>
+
+                <form>
+                    <div class="form-group">
+                        <label for="txtNome">Nome</label>
+                        <input type="text" class="form-control" id="txtNome"
+                            placeholder="Seu nome aqui. . .">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtEmail">E-mail</label>
+                        <input type="email" class="form-control" id="txtEmail"
+                            placeholder="nome@exemplo.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtMensagem">Mensagem</label>
+                        <textarea class="form-control" id="txtMensagem" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Enviar</button>
+                </form>
+            </Fieldset>
         </section>
 
         <footer class="footer footer-big footer-color-black" data-color="black">
@@ -374,17 +402,10 @@
 
 </body>
 
-<!--   core js files    -->
 <script src="assets/js/jquery.min.js" type="text/javascript"></script>
 <script src="assets/js/bootstrap.js" type="text/javascript"></script>
-
-<!--  js library for devices recognition -->
 <script type="text/javascript" src="assets/js/modernizr.js"></script>
-
-<!--  script for google maps   -->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-
-<!--   file where we handle all the script from the Gaia - Bootstrap Template   -->
 <script type="text/javascript" src="assets/js/gaia.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
     integrity="sha512-3J8teBiHrSyaaRBajZyIEtpDsXdPq1gsznKWIVb5CnorQuFhjWGhWe54z8YNnHHr7MZuExb9m5kvf964HiT1Sw=="
@@ -396,10 +417,21 @@
         backSpeed: 60,
         loop: true
     });
+
+    function AlterarAltoContraste(){
+
+        if (document.documentElement.classList.contains('high-contrast')) {
+            document.documentElement.classList = '';
+            document.documentElement.classList.add('normal')
+        } else {
+            document.documentElement.classList = '';
+            document.documentElement.classList.add('high-contrast')
+        }
+    }
 </script>
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script>
+<script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
-  </script>
+</script>
 
 </html>
