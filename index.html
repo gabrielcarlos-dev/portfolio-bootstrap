@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="ht0tps://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
-<body>
+<body onload="LoadOptions()">
     <nav class="navbar navbar-default navbar-transparent navbar-fixed-top" color-on-scroll="200">
         <div class="container">
             <div class="navbar-header">
@@ -152,7 +152,7 @@
                     </div>
                 </div>
                 <div class="parallax filter">
-                    <div class="image" style="background-image: url('assets/img/background.jpg');" alt="">
+                    <div class="image" style="background-image: url('assets/img/background.jpg');" alt="imagem de um teclado meramente ilustrativa">
                     </div>
                     <div class="container">
                         <div class="content">
@@ -171,7 +171,7 @@
                                                 <div class="card card-member">
                                                     <div class="content">
                                                         <div class="avatar avatar-danger">
-                                                            <img alt="" class="img-circle"
+                                                            <img alt="imagem cortina desenvolvida" class="img-circle"
                                                                 src="assets/img/projetos/cortina-automatizada.jpg" />
                                                         </div>
                                                         <div class="description">
@@ -192,7 +192,7 @@
                                                 <div class="card card-member">
                                                     <div class="content">
                                                         <div class="avatar avatar-danger">
-                                                            <img alt="" class="img-circle"
+                                                            <img alt="imagem logo do site nerdside" class="img-circle"
                                                                 src="assets/img/projetos/nerdside.png" />
                                                         </div>
                                                         <div class="description">
@@ -212,7 +212,7 @@
                                                 <div class="card card-member">
                                                     <div class="content">
                                                         <div class="avatar avatar-danger">
-                                                            <img alt="" class="img-circle"
+                                                            <img alt="imagem de uma mira representando o site PGA" class="img-circle"
                                                                 src="assets/img/projetos/pro-gaming-academy.jpg" />
                                                         </div>
                                                         <div class="description">
@@ -251,14 +251,14 @@
                         <li class="active">
                             <a href="#testimonial1" role="tab" data-toggle="tab">
                                 <div class="image-clients">
-                                    <img alt="" class="img" style="border-radius: 20%;" src="assets/img/ETEC.png" />
+                                    <img alt="logo etec" class="img" style="border-radius: 20%;" src="assets/img/ETEC.png" />
                                 </div>
                             </a>
                         </li>
                         <li>
                             <a href="#testimonial2" role="tab" data-toggle="tab">
                                 <div class="image-clients">
-                                    <img alt="" class="img" style="border-radius: 20%;" src="assets/img/FATEC.png" />
+                                    <img alt="logo fatec" class="img" style="border-radius: 20%;" src="assets/img/FATEC.png" />
                                 </div>
                             </a>
                         </li>
@@ -296,7 +296,7 @@
                 <div class="parallax filter filter-color-black">
                 </div>
                 <div class="parallax filter">
-                    <div class="image" alt=""
+                    <div class="image" alt="imagem de um escritorio ilustrativa"
                         style="background-image: url('https://images.unsplash.com/photo-1581837565439-ff14b5fa55da?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
                     </div>
                     <div class="container">
@@ -409,6 +409,26 @@
     integrity="sha512-3J8teBiHrSyaaRBajZyIEtpDsXdPq1gsznKWIVb5CnorQuFhjWGhWe54z8YNnHHr7MZuExb9m5kvf964HiT1Sw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+
+    function setCookie(cName, cValue, expDays) {
+        let date = new Date();
+        date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
+    }
+
+    function getCookie(cName) {
+        const name = cName + "=";
+        const cDecoded = decodeURIComponent(document.cookie); //to be careful
+        const cArr = cDecoded.split('; ');
+        let res;
+        cArr.forEach(val => {
+            if (val.indexOf(name) === 0) res = val.substring(name.length);
+        })
+        return res;
+    }
+
+
     var highConstrastTheme = false;
 
     var typed = new Typed(".typing", {
@@ -420,7 +440,17 @@
 
     function AlterarAltoContraste() {
 
-        if (!highConstrastTheme) {
+        if (getCookie("high-contrast-theme") === "false" || getCookie("high-contrast-theme") === null) {
+            setCookie("high-contrast-theme", "true", 30);
+            document.location.reload(true)
+        } else if (getCookie("high-contrast-theme") === "true") {
+            setCookie("high-contrast-theme", "false", 30);
+            document.location.reload(true)
+        }
+    }
+
+    function LoadOptions() {
+        if (getCookie("high-contrast-theme") === "true") {
 
             var body = document.getElementsByTagName("BODY")[0];
             var html = document.getElementsByTagName("HTML")[0];
@@ -433,13 +463,13 @@
                 "INPUT", "P", "BUTTON", "OL", "UL", "A", "DIV",
                 "TD", "TH", "SPAN", "LI",
                 "H1", "H2", "H3", "H4", "H5", "H6",
-                "DD", "DT",
+                "DD", "DT", "TEXTAREA",
                 "INCLUDE-FRAGMENT", "ARTICLE"
             ];
             for (let tag of tags) {
                 for (let item of document.getElementsByTagName(tag)) {
                     item.style.backgroundColor = "black";
-                    item.style.color = "#ffe000";
+                    item.style.color = "white";
                 }
             }
             for (let tag of ["CODE", "PRE"]) {
@@ -456,18 +486,60 @@
                 video.style.backgroundColor = "black";
             }
             for (let tag of document.getElementsByTagName("TH")) {
-                tag.style.borderBottom = "solid 1px yellow";
+                tag.style.borderBottom = "solid 1px white";
             }
             for (let tag of document.getElementsByTagName("A")) {
-                tag.style.color = "cyan";
+                tag.style.color = "blue";
             }
-            highConstrastTheme = true;
-            return;
         }
-        document.location.reload(true);
-        highConstrastTheme = false;
-        return;
     }
+
+        //     var body = document.getElementsByTagName("BODY")[0];
+        //     var html = document.getElementsByTagName("HTML")[0];
+        //     html.style.backgroundColor = "#303000";
+        //     body.style.backgroundColor = "black";
+        //     body.style.color = "#f0e000";
+        //     var tags = ["FOOTER", "HEADER", "MAIN", "SECTION",
+        //         "NAV", "FORM",
+        //         "FONT", "EM", "B", "I", "U",
+        //         "INPUT", "P", "BUTTON", "OL", "UL", "A", "DIV",
+        //         "TD", "TH", "SPAN", "LI",
+        //         "H1", "H2", "H3", "H4", "H5", "H6",
+        //         "DD", "DT", "TEXTAREA",
+        //         "INCLUDE-FRAGMENT", "ARTICLE"
+        //     ];
+        //     for (let tag of tags) {
+        //         for (let item of document.getElementsByTagName(tag)) {
+        //             item.style.backgroundColor = "black";
+        //             item.style.color = "white";
+        //         }
+        //     }
+        //     for (let tag of ["CODE", "PRE"]) {
+        //         for (let item of document.getElementsByTagName(tag)) {
+        //             item.style.backgroundColor = "black";
+        //             item.style.color = "green";
+        //         }
+        //     }
+        //     for (let tag of document.getElementsByTagName("INPUT")) {
+        //         tag.style.border = "solid 1px #bbb";
+        //     }
+        //     var videos = document.getElementsByTagName("VIDEO");
+        //     for (let video of videos) {
+        //         video.style.backgroundColor = "black";
+        //     }
+        //     for (let tag of document.getElementsByTagName("TH")) {
+        //         tag.style.borderBottom = "solid 1px white";
+        //     }
+        //     for (let tag of document.getElementsByTagName("A")) {
+        //         tag.style.color = "blue";
+        //     }
+        //     setCookie("high-contrast-theme", "true", 30);
+        //     return;
+        // }
+    //     document.location.reload(true);
+    //     setCookie("high-contrast-theme", "false", 30);
+    //     return;
+    // }
 
 
 
