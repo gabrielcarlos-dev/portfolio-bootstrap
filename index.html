@@ -20,43 +20,47 @@
 </head>
 
 <body onload="LoadOptions()">
-    <nav class="navbar navbar-default navbar-transparent navbar-fixed-top" color-on-scroll="200">
-        <div class="container">
-            <div class="navbar-header">
-                <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#example">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar bar1"></span>
-                    <span class="icon-bar bar2"></span>
-                    <span class="icon-bar bar3"></span>
-                </button>
-                <a href="#" class="navbar-brand"><span class="navbar-tittle-text">Port</span>folio</a>
+    <header>
+
+        <nav class="navbar navbar-default navbar-transparent navbar-fixed-top" color-on-scroll="200">
+            <div class="container">
+                <div class="navbar-header">
+                    <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#example">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar bar1"></span>
+                        <span class="icon-bar bar2"></span>
+                        <span class="icon-bar bar3"></span>
+                    </button>
+                    <a href="#" class="navbar-brand"><span class="navbar-tittle-text">Port</span>folio</a>
+                </div>
+
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right navbar-uppercase">
+                        <li>
+                            <button type="button" class="btn btn-primary mb-2" onclick="AlterarAltoContraste()">Alto
+                                Contraste</button>
+                        </li>
+
+                        <li>
+                            <a href="#inicio">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="#sobre">Sobre</a>
+                        </li>
+                        <li>
+                            <a href="#projetos">Projetos</a>
+                        </li>
+                        <li>
+                            <a href="#formacoes">Formações</a>
+                        </li>
+                </div>
             </div>
-
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right navbar-uppercase">
-                    <li>
-                        <button type="button" class="btn btn-primary mb-2" onclick="AlterarAltoContraste()">Alto
-                            Contraste</button>
-                    </li>
-
-                    <li>
-                        <a href="#inicio">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="#sobre">Sobre</a>
-                    </li>
-                    <li>
-                        <a href="#projetos">Projetos</a>
-                    </li>
-                    <li>
-                        <a href="#formacoes">Formações</a>
-                    </li>
-            </div>
-    </nav>
+        </nav>
+    </header>
 
 
-    <div id="inicio">
+    <section id="inicio">
         <div class="inicio">
             <div class="section section-header">
                 <div class="parallax filter">
@@ -88,7 +92,7 @@
         </div>
 
 
-        <div id="sobre">
+        <section id="sobre">
             <div class="section">
                 <div class="container">
                     <div class="row">
@@ -135,10 +139,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
 
-        <div id="projetos">
+        <section id="projetos">
             <div class="section section-our-team-freebie">
                 <div class="parallax filter filter-color-black">
                 </div>
@@ -152,7 +156,8 @@
                     </div>
                 </div>
                 <div class="parallax filter">
-                    <div class="image" style="background-image: url('assets/img/background.jpg');" alt="imagem de um teclado meramente ilustrativa">
+                    <div class="image" style="background-image: url('assets/img/background.jpg');"
+                        alt="imagem de um teclado meramente ilustrativa">
                     </div>
                     <div class="container">
                         <div class="content">
@@ -212,7 +217,8 @@
                                                 <div class="card card-member">
                                                     <div class="content">
                                                         <div class="avatar avatar-danger">
-                                                            <img alt="imagem de uma mira representando o site PGA" class="img-circle"
+                                                            <img alt="imagem de uma mira representando o site PGA"
+                                                                class="img-circle"
                                                                 src="assets/img/projetos/pro-gaming-academy.jpg" />
                                                         </div>
                                                         <div class="description">
@@ -236,10 +242,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-
-        <div id="formacoes">
+        <section id="formacoes">
             <div class="section section-our-clients-freebie">
                 <div class="container">
                     <div class="title-area">
@@ -251,14 +256,16 @@
                         <li class="active">
                             <a href="#testimonial1" role="tab" data-toggle="tab">
                                 <div class="image-clients">
-                                    <img alt="logo etec" class="img" style="border-radius: 20%;" src="assets/img/ETEC.png" />
+                                    <img alt="logo etec" class="img" style="border-radius: 20%;"
+                                        src="assets/img/ETEC.png" />
                                 </div>
                             </a>
                         </li>
                         <li>
                             <a href="#testimonial2" role="tab" data-toggle="tab">
                                 <div class="image-clients">
-                                    <img alt="logo fatec" class="img" style="border-radius: 20%;" src="assets/img/FATEC.png" />
+                                    <img alt="logo fatec" class="img" style="border-radius: 20%;"
+                                        src="assets/img/FATEC.png" />
                                 </div>
                             </a>
                         </li>
@@ -289,7 +296,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <section id="contact" class="contact">
             <div class="section section-our-team-freebie">
@@ -493,57 +500,6 @@
             }
         }
     }
-
-        //     var body = document.getElementsByTagName("BODY")[0];
-        //     var html = document.getElementsByTagName("HTML")[0];
-        //     html.style.backgroundColor = "#303000";
-        //     body.style.backgroundColor = "black";
-        //     body.style.color = "#f0e000";
-        //     var tags = ["FOOTER", "HEADER", "MAIN", "SECTION",
-        //         "NAV", "FORM",
-        //         "FONT", "EM", "B", "I", "U",
-        //         "INPUT", "P", "BUTTON", "OL", "UL", "A", "DIV",
-        //         "TD", "TH", "SPAN", "LI",
-        //         "H1", "H2", "H3", "H4", "H5", "H6",
-        //         "DD", "DT", "TEXTAREA",
-        //         "INCLUDE-FRAGMENT", "ARTICLE"
-        //     ];
-        //     for (let tag of tags) {
-        //         for (let item of document.getElementsByTagName(tag)) {
-        //             item.style.backgroundColor = "black";
-        //             item.style.color = "white";
-        //         }
-        //     }
-        //     for (let tag of ["CODE", "PRE"]) {
-        //         for (let item of document.getElementsByTagName(tag)) {
-        //             item.style.backgroundColor = "black";
-        //             item.style.color = "green";
-        //         }
-        //     }
-        //     for (let tag of document.getElementsByTagName("INPUT")) {
-        //         tag.style.border = "solid 1px #bbb";
-        //     }
-        //     var videos = document.getElementsByTagName("VIDEO");
-        //     for (let video of videos) {
-        //         video.style.backgroundColor = "black";
-        //     }
-        //     for (let tag of document.getElementsByTagName("TH")) {
-        //         tag.style.borderBottom = "solid 1px white";
-        //     }
-        //     for (let tag of document.getElementsByTagName("A")) {
-        //         tag.style.color = "blue";
-        //     }
-        //     setCookie("high-contrast-theme", "true", 30);
-        //     return;
-        // }
-    //     document.location.reload(true);
-    //     setCookie("high-contrast-theme", "false", 30);
-    //     return;
-    // }
-
-
-
-
 
 </script>
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
