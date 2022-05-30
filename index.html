@@ -248,7 +248,6 @@
                     <div class="title-area">
                         <h2>Formações</h2>
                         <hr>
-                        <p class="description">Instituições que já estudei</p>
                     </div>
                     <ul class="nav nav-text" role="tablist">
                         <li class="active">
@@ -445,7 +444,7 @@
 
     function AlterarAltoContraste() {
 
-        if (getCookie("high-contrast-theme") === "false" || getCookie("high-contrast-theme") === null) {
+        if (getCookie("high-contrast-theme") === "false" || getCookie("high-contrast-theme") === null || getCookie("high-contrast-theme") === undefined) {
             setCookie("high-contrast-theme", "true", 30);
             document.location.reload(true)
         } else if (getCookie("high-contrast-theme") === "true") {
